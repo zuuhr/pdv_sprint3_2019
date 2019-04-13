@@ -1,0 +1,1 @@
+D:\Uso\Clase\2_Segundo\Semestre_2\proceso_de_desarrollo_de_videojuegos\sprint3\PDV_sprint3_Agua_de_Madrid\03_27_19_wip_sprint2_pdv\sonar-scanner-msbuild-4.6.0.1930-net46\.sonarqube\out\0
