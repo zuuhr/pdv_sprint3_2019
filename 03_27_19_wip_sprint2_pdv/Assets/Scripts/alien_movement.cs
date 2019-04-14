@@ -23,6 +23,7 @@ public class alien_movement : MonoBehaviour
         if (transform.parent.tag == "odd") right *= -1; //if the alien is an odd or even numbered row, it's initial movement changes
         color = 1; 
         army = GameObject.Find("army").GetComponent<enemyShoot>().army; //Get the list of aliens ingame
+        
     }
 
     void Update()
