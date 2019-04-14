@@ -5,14 +5,14 @@ public class enemyShootingMove : MonoBehaviour
 {
     Rigidbody rb;
     private int rebounds_number;
-    private int speed = 10;
+    private int speed=15;
     public int MaxDistProjectile;
     public static bool change;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>(); 
-        rb.velocity = transform.TransformDirection(new Vector3(0.0f, 0.0f, -1.0f) * speed); //movement 
+        rb.velocity = transform.TransformDirection((Player_movement_2D.thisPosition-rb.position).normalized * speed); //movement 
     }
     private void Update()
     {
