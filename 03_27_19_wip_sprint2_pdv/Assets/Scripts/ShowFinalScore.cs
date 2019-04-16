@@ -9,6 +9,7 @@ public class ShowFinalScore : MonoBehaviour
    
     void Start()
     {
+        //PlayerPrefs.DeleteAll(); //use this line to reset the ranking
         int punt = over13_variables.score2;
         scoreText.text = "Score: " + punt;
         int i = 0;//counter variable
@@ -43,11 +44,8 @@ public class ShowFinalScore : MonoBehaviour
             } while (i<final && terminar==0);//exit loop if the correct position was given or we finished checking the ranking
         }
     }
-    private void Update()
+    public void Submit()
     {
-        if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey("enter"))//only if we press the correct key
-        {
             PlayerPrefs.SetString(marcador2, enterName.text);//we save the name associated to the score obtained
-        }
     }
 }
