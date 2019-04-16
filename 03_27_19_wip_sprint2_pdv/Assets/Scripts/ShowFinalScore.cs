@@ -9,6 +9,7 @@ public class ShowFinalScore : MonoBehaviour
    
     void Start()
     {
+        //PlayerPrefs.DeleteAll(); //use this line to reset the ranking
         int punt = over13_variables.score2;
         scoreText.text = "Score: " + punt;
         int i = 0;//counter variable
