@@ -199,6 +199,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1382657904}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &144712523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: efc58c61327103c46963a55f90820bee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1739672573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &144712527
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144712523}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.99999994
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &144712528
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144712523}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &159525374 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7898712435968999722, guid: fa0594ce7a4c59d40a0d379bed8d0c75,
@@ -527,7 +562,7 @@ MonoBehaviour:
   maxSpeed: 100
   acceleration: 10
   frictionConstant: 0.1
-  bullet: {fileID: 0}
+  bullet: {fileID: 4055482303244558547, guid: 98cb3961c5f66754285e69453b77fbba, type: 3}
   gameOverScene: 
 --- !u!143 &517505311
 CharacterController:
@@ -1921,15 +1956,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f4b4591393564e41b77361f8fb6daba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.81
+      value: 2.43
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f4b4591393564e41b77361f8fb6daba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f4b4591393564e41b77361f8fb6daba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.74
+      value: 14.06
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f4b4591393564e41b77361f8fb6daba, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2120,6 +2155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: out_sphere_0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: efc58c61327103c46963a55f90820bee, type: 3}
+      propertyPath: m_TagString
+      value: main_area
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19695628
@@ -2179,7 +2218,15 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8c55e8b1782ba6f42ae48a7e05dba216, type: 2}
+      objectReference: {fileID: 2100000, guid: a7d65342dc033f246973479271ca7dda, type: 2}
+    - target: {fileID: 2300000, guid: efc58c61327103c46963a55f90820bee, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: efc58c61327103c46963a55f90820bee, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efc58c61327103c46963a55f90820bee, type: 3}
 --- !u!4 &1762692592 stripped

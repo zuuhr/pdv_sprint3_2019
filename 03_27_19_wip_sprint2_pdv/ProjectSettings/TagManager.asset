@@ -15,6 +15,7 @@ TagManager:
   - wall_rebounds_t
   - wall_rebounds_b
   - boss
+  - bullet
   layers:
   - Default
   - TransparentFX

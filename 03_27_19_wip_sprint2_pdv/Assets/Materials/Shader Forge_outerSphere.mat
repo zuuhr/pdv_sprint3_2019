@@ -24,10 +24,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _node_4627:
-        m_Texture: {fileID: 2800000, guid: b88444f5de9cde34abc61f2b2bb6671e, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1d4057243695be419bf25839f184f00, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.5
     m_Colors:
     - _Color: {r: 0.07843138, g: 0.3921569, b: 0.7843137, a: 1}
+    - _node_4827: {r: 0.6585084, g: 0.9245283, b: 0.8962765, a: 1}

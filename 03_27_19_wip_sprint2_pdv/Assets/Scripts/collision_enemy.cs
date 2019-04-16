@@ -6,9 +6,10 @@ public class collision_enemy : MonoBehaviour
     private int rebounds_number;
     public float speed = 20.0f;
     public float MaxDistProjectile;
+    public GameObject impact;
 
     public static bool change; //variable that handles the color change 
-
+    
     Vector3 lookat;
     Vector3 movement;
     void Start()
@@ -20,8 +21,8 @@ public class collision_enemy : MonoBehaviour
     }
     void Update()
     {
-        if ((rb.position - Player_movement_2D.thisPosition).magnitude > MaxDistProjectile) Destroy(this);  //If the bullet gets too far away 
-        if (over13_variables.rebounds) MaxDistProjectile *= 100; 
+        //if ((rb.position - Player_movement_2D.thisPosition).magnitude > MaxDistProjectile) Destroy(this);  //If the bullet gets too far away 
+        //if (over13_variables.rebounds) MaxDistProjectile *= 100; 
     }
     private void OnTriggerEnter (Collider other) 
     {
@@ -58,5 +59,16 @@ public class collision_enemy : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "main_area" || other.CompareTag("main_area"))
+        {
+
+            Instantiate(impact, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+        
     }
 }
