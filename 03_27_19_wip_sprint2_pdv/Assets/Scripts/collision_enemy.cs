@@ -67,6 +67,7 @@ public class collision_enemy : MonoBehaviour
         {
 
             Instantiate(impact, transform.position, transform.rotation);
+
             Destroy(this.gameObject);
         }
         
