@@ -17,14 +17,15 @@ public class over13_variables : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("actualscore", 0);
         UpdateScore(); //Initial score
         timer = Time.time + 10; //set timer to spawn boss
     }
 
     void Update()
     {
-        score2 = score; //Score 
-        if (score == 2900)  SceneManager.LoadScene("Menu_prueba_victoria"); //You win if you reach this amount of points
+        //score2 = score; //Score 
+        //if (score == 2900)  SceneManager.LoadScene("Menu_prueba_victoria"); //You win if you reach this amount of points (1st and 2nd sprint)
         if (add) AddScore(); //add points because one alien was destroyed
         if (addBoss) //add points because one boss alien was destroyed
         {
@@ -51,11 +52,12 @@ public class over13_variables : MonoBehaviour
     }
     public void AddScore() //Add points to score
     {
-        score += scoreValue;
+        //score += scoreValue;
+        PlayerPrefs.SetInt("actualscore", PlayerPrefs.GetInt("actualscore", 0)+scoreValue);
         UpdateScore();
         add = false;
         addBoss = false;
         scoreValue = 100;
     }
-    void UpdateScore() => scoreText.text = "Score: " + score; //Show score in screen
+    void UpdateScore() => scoreText.text = "Score: " + PlayerPrefs.GetInt("actualscore", 0); //Show score in screen
 }

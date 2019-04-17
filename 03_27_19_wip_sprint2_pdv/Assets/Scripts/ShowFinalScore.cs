@@ -10,8 +10,9 @@ public class ShowFinalScore : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll(); //use this line to reset the ranking
-        int punt = over13_variables.score2;
-        scoreText.text = "Score: " + punt;
+        //int punt = over13_variables.score2;
+        int punt = PlayerPrefs.GetInt("actualscore", 0);
+        //scoreText.text = "Score: " + punt;
         int i = 0;//counter variable
         int final = 9;//constant 
         int terminar = 0;//used as boolean (0-1)
