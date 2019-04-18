@@ -6,9 +6,11 @@ public class ShowFinalScore : MonoBehaviour
     public Text scoreText;
     public InputField enterName;
     public string marcador2;
-   
+    public Image record;
+
     void Start()
     {
+        record.enabled=false;
         //PlayerPrefs.DeleteAll(); //use this line to reset the ranking
         //int punt = over13_variables.score2;
         int punt = PlayerPrefs.GetInt("actualscore", 0);
@@ -21,8 +23,10 @@ public class ShowFinalScore : MonoBehaviour
         string aux2;
         string aux3;
         string aux4;
-        if (punt > PlayerPrefs.GetInt("scoresp9", 0)) {// if the score can be in the ranking, being higher than the lowest saved
-            do
+        if(PlayerPrefs.GetInt("actualscore", 0) >= PlayerPrefs.GetInt("scoresp0", 0)){
+            record.enabled = true;
+        }
+        do
             {
                 marcador = "scoresp" + i;//to update the keys 
                 marcador2 = "namep" + i;
@@ -43,7 +47,7 @@ public class ShowFinalScore : MonoBehaviour
                     terminar = 1;//to get out of the loop
                 }
             } while (i<final && terminar==0);//exit loop if the correct position was given or we finished checking the ranking
-        }
+        
     }
     public void Submit()
     {
