@@ -12,7 +12,7 @@ public class alien_boss_bullet_script : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>(); //acquires the rigidbody of the gameobject
         //rb.velocity = new Vector3(0 , 0, -1) * speed; //initial moving direction
-        rb.velocity = transform.TransformDirection((Player_movement_2D.thisPosition - rb.position).normalized * speed);
+        rb.velocity = transform.TransformDirection((Player_movement_2DNew.thisPosition - rb.position).normalized * speed);
         //transform.LookAt(transform.position + rb.velocity); //The lookat vector will point towards the movement direction
     }
 

@@ -12,11 +12,11 @@ public class enemyShootingMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>(); 
-        rb.velocity = transform.TransformDirection((Player_movement_2D.thisPosition-rb.position).normalized * speed); //movement 
+        rb.velocity = transform.TransformDirection((Player_movement_2DNew.thisPosition-rb.position).normalized * speed); //movement 
     }
     private void Update()
     {
-        if ((rb.position - Player_movement_2D.thisPosition).magnitude > MaxDistProjectile)  Destroy(this);  //If the bullet gets too far away 
+        if ((rb.position - Player_movement_2DNew.thisPosition).magnitude > MaxDistProjectile)  Destroy(this);  //If the bullet gets too far away 
     }
     private void OnTriggerEnter(Collider other)
     {
