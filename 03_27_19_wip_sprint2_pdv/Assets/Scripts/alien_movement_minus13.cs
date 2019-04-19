@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class alien_movement_minus13 : MonoBehaviour
@@ -7,9 +9,17 @@ public class alien_movement_minus13 : MonoBehaviour
     public int speed;
 
     void Start() => movement = new Vector3(0,0,-1) * speed; //movement
-    
-    void Update() => transform.Translate(movement * Time.deltaTime); //movement
-    
+
+    void Update()
+    {
+        if (Time.timeScale == 0)
+        {
+            speed = 0;
+        } else if (Time.timeScale == 1)
+        {
+            transform.Translate(movement * Time.deltaTime); //movement
+        }
+    }
     private void OnTriggerExit(Collider collider)
     {
         if (collider.tag == "main_area") //if alien is leaving the game area

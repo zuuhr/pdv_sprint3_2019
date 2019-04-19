@@ -17,7 +17,7 @@ public class over13_variables : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("actualscore", 100000); //set score to 0 every game
+        PlayerPrefs.SetInt("actualscore", 0); //set score to 0 every game
         UpdateScore(); //Initial score
         timer = Time.time + 10; //set timer to spawn boss
     }
