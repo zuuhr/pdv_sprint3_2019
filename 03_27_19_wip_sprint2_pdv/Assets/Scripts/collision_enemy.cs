@@ -15,7 +15,7 @@ public class collision_enemy : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        lookat = Player_movement_2D.lookat.normalized; 
+        lookat = Player_movement_2DNew.lookat.normalized; 
         rb.velocity = lookat * speed; //The bullet direction is where the player is looking
         transform.LookAt(transform.position + rb.velocity.normalized); //The bullet orientation is where the player is looking
     }
