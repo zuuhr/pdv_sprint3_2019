@@ -5,7 +5,7 @@ using UnityEngine;
 public class AlienGeneration : MonoBehaviour
 {
     public GameObject alien;
-    public GameObject parent;
+    //public GameObject parent;
     public float newAlienRespawnTime; //gap time between bullet firing
     float timeLimit; //gap time in real time units 
 
@@ -22,8 +22,9 @@ public class AlienGeneration : MonoBehaviour
         float timeLeft = timeLimit - Time.time;
         if (timeLeft < 0) //when time is up 
         {
-            GameObject hijo= Instantiate(alien, new Vector3(0, 0, 0), this.transform.rotation);
-            hijo.transform.parent = parent.transform;
+            //GameObject hijo= Instantiate(alien, new Vector3(0, 0, 0), this.transform.rotation);
+            //hijo.transform.parent = parent.transform;
+            Instantiate(alien, new Vector3(0, 0, 0), this.transform.rotation);
             timeLimit = Time.time + newAlienRespawnTime; //set new timer
         }
         

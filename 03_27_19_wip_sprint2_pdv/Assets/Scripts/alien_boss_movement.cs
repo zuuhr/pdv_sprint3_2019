@@ -10,7 +10,7 @@ public class alien_boss_movement : MonoBehaviour
     private int shotNumber=0;
     float advanceTime;
     public int bulletLimit;
-    public GameObject parent;
+    //public GameObject parent;
 
     void Start()
     {
@@ -69,8 +69,9 @@ public class alien_boss_movement : MonoBehaviour
     }
     void shoot()
     {
-        GameObject hijo = Instantiate(bullet, this.transform.position, this.transform.rotation);
-        hijo.transform.parent = parent.transform;
+        //GameObject hijo = Instantiate(bullet, this.transform.position, this.transform.rotation);
+        //hijo.transform.parent = parent.transform;
+        Instantiate(bullet, this.transform.position, this.transform.rotation);
     }
     //Instantiation of the bullet
     
