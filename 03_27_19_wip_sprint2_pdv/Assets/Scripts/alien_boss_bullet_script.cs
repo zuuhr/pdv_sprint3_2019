@@ -16,6 +16,14 @@ public class alien_boss_bullet_script : MonoBehaviour
         //transform.LookAt(transform.position + rb.velocity); //The lookat vector will point towards the movement direction
     }
 
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag == "main_area") //if alien is leaving the game area
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if ((other.gameObject.CompareTag("Player")) || (other.gameObject.CompareTag("Wall")))  //if the bullet hits either the player or a wall

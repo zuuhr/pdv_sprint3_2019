@@ -9,7 +9,8 @@ public class alien_boss_movement : MonoBehaviour
     private Vector3 movement; 
     private int shotNumber=0;
     float advanceTime;
-    public int bulletLimit; 
+    public int bulletLimit;
+    public GameObject parent;
 
     void Start()
     {
@@ -66,7 +67,12 @@ public class alien_boss_movement : MonoBehaviour
              }
     }*/
     }
-    void shoot()=>Instantiate(bullet, this.transform.position, this.transform.rotation); //Instantiation of the bullet
+    void shoot()
+    {
+        GameObject hijo = Instantiate(bullet, this.transform.position, this.transform.rotation);
+        hijo.transform.parent = parent.transform;
+    }
+    //Instantiation of the bullet
     
  
 }
