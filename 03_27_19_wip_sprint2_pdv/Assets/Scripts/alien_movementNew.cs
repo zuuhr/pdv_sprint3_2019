@@ -47,7 +47,7 @@ public class alien_movementNew : MonoBehaviour
     {
         if (collider.tag == "Player") //if alien hits the player
         {
-            SceneManager.LoadScene("Menu_prueba_derrota"); //Game Over scene
+            SceneManager.LoadScene("End_13plus"); //Game Over scene
         }
         /*if (collider.tag == "Wall") //if alien hits a defensive wall
         {

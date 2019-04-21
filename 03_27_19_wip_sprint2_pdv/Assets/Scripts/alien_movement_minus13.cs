@@ -31,7 +31,7 @@ public class alien_movement_minus13 : MonoBehaviour
     {
         if (collider.tag == "Player") //if alien hits the player
         {
-            SceneManager.LoadScene("Menu_prueba_muerte"); //game over scene
+            SceneManager.LoadScene("End_13minus"); //game over scene
             Destroy(collider);
         }
         if (collider.tag == "Wall")

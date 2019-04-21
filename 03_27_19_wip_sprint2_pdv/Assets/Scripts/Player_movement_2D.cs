@@ -49,7 +49,7 @@ public class Player_movement_2D : MonoBehaviour
             if((PlayerPrefs.GetInt("scoresp9",0)) <= (PlayerPrefs.GetInt("actualscore", 0))){ 
                 SceneManager.LoadScene(gameOverScene); //game over scene if your score is in the ranking
             }else if ((PlayerPrefs.GetInt("scoresp9", 0)) > (PlayerPrefs.GetInt("actualscore", 0))){
-                SceneManager.LoadScene("Menu_prueba_muerte");//game over scene if your score isn't in the ranking
+                SceneManager.LoadScene("End_13minus");//game over scene if your score isn't in the ranking
             }
             Destroy(this.gameObject);
         }

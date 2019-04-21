@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04345821, g: 0.041858047, b: 0.044895597, a: 1}
+  m_IndirectSpecularColor: {r: 0.042991474, g: 0.04043382, b: 0.04446745, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2217,7 +2217,7 @@ MonoBehaviour:
   acceleration: 2
   frictionConstant: 0.9
   bullet: {fileID: 0}
-  gameOverScene: Menu_prueba_muerte
+  gameOverScene: End_13minus
 --- !u!54 &792368780
 Rigidbody:
   m_ObjectHideFlags: 0
