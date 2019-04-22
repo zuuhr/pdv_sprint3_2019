@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.042991474, g: 0.04043382, b: 0.04446745, a: 1}
+  m_IndirectSpecularColor: {r: 0.044414505, g: 0.0418735, b: 0.045859963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3148,14 +3148,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067485245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50d1da3f17350b84894ff6339613450c, type: 3}
+  m_Script: {fileID: 11500000, guid: 427a119010455c84ea33333043ee990f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableMovementAlien: {fileID: 2182940210089866695, guid: df733908d66196046901b50f2ce2e65b,
-    type: 3}
+  disableMovementAlien: {fileID: 2117744131}
   disableMovementPlayer: {fileID: 792368779}
-  disableEnemyShot: {fileID: 6435888723933901691, guid: bb01f1ef0222db142a54fd410551887e,
-    type: 3}
 --- !u!114 &1067485247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5808,6 +5805,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 4587086f75cdbda4098415d97ef00704, type: 2}
+--- !u!114 &2117744131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7979765606622198480, guid: be0a9536fdd190a498e9958608b18ba3,
+    type: 3}
+  m_PrefabInstance: {fileID: 586174700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8685ca4ede7f44cb99459ca70e2081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2136129794
 PrefabInstance:
   m_ObjectHideFlags: 0
