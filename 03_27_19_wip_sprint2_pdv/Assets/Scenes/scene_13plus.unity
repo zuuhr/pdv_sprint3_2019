@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.044414505, g: 0.0418735, b: 0.045859963, a: 1}
+  m_IndirectSpecularColor: {r: 0.04345821, g: 0.041858047, b: 0.044895597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 35583990}
   - component: {fileID: 35583989}
   - component: {fileID: 35583988}
+  - component: {fileID: 35583992}
   m_Layer: 0
   m_Name: black hole/mothership
   m_TagString: Untagged
@@ -287,6 +288,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &35583992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35583987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e486a22623fae409410025e6ddb3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alien: {fileID: 2182940210089866690, guid: df733908d66196046901b50f2ce2e65b, type: 3}
+  newAlienRespawnTime: 6
 --- !u!1 &139418921
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,18 +3558,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!75 &2138929576
-ConstantForce:
+--- !u!114 &2138929576
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138929575}
   m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 1, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78106755e937e84998b59c679dabddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 3
 --- !u!54 &2138929577
 Rigidbody:
   m_ObjectHideFlags: 0

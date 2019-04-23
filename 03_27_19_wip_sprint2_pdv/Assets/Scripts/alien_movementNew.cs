@@ -20,11 +20,15 @@ public class alien_movementNew : MonoBehaviour
         xRand = (int)Random.Range(-10, 10);
         zRand = (int)Random.Range(-10, 10);
         movement = new Vector3(xRand, 0, zRand) * speed;
-        //transform.forward = transform.position + movement;
+
+        //transform.forward = Player_movement_2DNew.thisPosition - transform.position;
+        
     }
 
     void Update()
     {
+        transform.LookAt(Player_movement_2DNew.thisPosition);
+
         float timeLeft = timeLimit - Time.time;
         if (timeLeft < 0) //when time is up 
         {

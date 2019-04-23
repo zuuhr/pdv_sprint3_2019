@@ -11,8 +11,9 @@ public class enemyShootingMove : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
-        rb.velocity = transform.TransformDirection((Player_movement_2DNew.thisPosition-rb.position).normalized * speed); //movement 
+        rb = GetComponent<Rigidbody>();
+        //rb.velocity = transform.TransformDirection((Player_movement_2DNew.thisPosition-rb.position).normalized * speed); //movement 
+        rb.velocity = transform.forward * speed;
     }
     private void Update()
     {
