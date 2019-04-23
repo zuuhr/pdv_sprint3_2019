@@ -32,7 +32,6 @@ public class under13_variables : MonoBehaviour
             Instantiate(alien, new Vector3(Random.Range(-12, 6), 0f, 16f), this.transform.rotation); 
             alienAppearance = false;
             timer = Time.time + 1; //set timer to spawn aliens
-            AddScore();
         }
     }
 

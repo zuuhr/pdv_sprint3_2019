@@ -7,8 +7,13 @@ public class alien_movement_minus13 : MonoBehaviour
 {
     Vector3 movement;
     public int speed;
+    public under13_variables scoreFunction;
 
-    void Start() => movement = new Vector3(0,0,-1) * speed; //movement
+    void Start()
+    {
+        movement = new Vector3(0, 0, -1) * speed; //movement
+        scoreFunction = GameObject.Find("GameObject").GetComponent<under13_variables>();
+    }
 
     void Update()
     {
@@ -25,6 +30,7 @@ public class alien_movement_minus13 : MonoBehaviour
         if (collider.tag == "main_area") //if alien is leaving the game area
         {
             Destroy(gameObject);
+            scoreFunction.AddScore();
         }
     }
     private void OnTriggerEnter(Collider collider)
@@ -38,6 +44,7 @@ public class alien_movement_minus13 : MonoBehaviour
         {
             Destroy(collider.gameObject); //if an alien collides against a wall, they would destroy it
             Destroy(gameObject);
+            scoreFunction.AddScore();
         }
     }
 }
