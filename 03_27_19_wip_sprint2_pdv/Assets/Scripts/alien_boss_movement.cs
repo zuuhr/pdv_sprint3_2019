@@ -3,14 +3,13 @@
 public class alien_boss_movement : MonoBehaviour
 {
     public GameObject bullet; //assigned bullet
-    private int xStart; //the x value of the initial position where the boss spawns
     private int xFinish; //the x value that limits the range of the movment
     private bool nextPhase; //Manages the behaviour of the boss
     private Vector3 movement; 
     private int shotNumber=0;
     float advanceTime;
     public int bulletLimit;
-    //public GameObject parent;
+    public float angle;
 
     void Start()
     {
@@ -18,13 +17,36 @@ public class alien_boss_movement : MonoBehaviour
         xFinish = -(xStart); //So the segment is symmetrical 
         movement = new Vector3 (40, 0 , 0);
         transform.position = new Vector3(xStart, 1, 13); //Initial position*/
-
+        xFinish = 3;
+        movement = new Vector3(1,0,0);
     }
 
     void Update()
     {
-        //transform.GetChild(1).GetComponent<Transform>().RotateAroundLocal(new Vector3(0, 0, 1), 1);
+        transform.GetChild(0).GetComponent<Transform>().Rotate(new Vector3(0, 0, 1), 1);
 
+
+        #region MOVEMENT
+        transform.LookAt(Player_movement_2DNew.thisPosition);
+
+        if (!nextPhase) //FIRST PHASE 
+        {
+            transform.Translate(movement * Time.deltaTime); //movement
+            if (transform.position.x > xFinish)
+            {
+                nextPhase = true;
+            }
+        }
+        if (nextPhase) //LAST PHASE
+        {
+            Debug.Log("SEGUNDA FASE");
+            transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), angle);
+        }
+
+        #endregion
+
+
+        /*#region SHOOTING
         if (shotNumber <= bulletLimit)
         {
             if(shotNumber%2==0) shoot();
@@ -37,6 +59,10 @@ public class alien_boss_movement : MonoBehaviour
             if (shotNumber == (bulletLimit*10))
                 shotNumber = 0;
         }
+        #endregion SHOOTING*/
+
+
+
 
         //GetComponent("eye_low").GetComponentInChildren<Transform>().RotateAround(new Vector3(0, 0, 0), new Vector3(0,0,1), 5);
         /*if (!nextPhase) //FIRST PHASE 
@@ -67,6 +93,7 @@ public class alien_boss_movement : MonoBehaviour
              }
     }*/
     }
+
     void shoot()
     {
         //GameObject hijo = Instantiate(bullet, this.transform.position, this.transform.rotation);

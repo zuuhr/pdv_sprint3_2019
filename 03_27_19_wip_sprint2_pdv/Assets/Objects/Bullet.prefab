@@ -124,3 +124,5 @@ MonoBehaviour:
   speed: 20
   MaxDistProjectile: 10
   impact: {fileID: 3676835483594814151, guid: a852851aa77fa5f4692273fb4eeedb1c, type: 3}
+  ag: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477, type: 3}
+  hole: {fileID: 4508689978140610755, guid: 4e3404dab1e503640a30105801908477, type: 3}

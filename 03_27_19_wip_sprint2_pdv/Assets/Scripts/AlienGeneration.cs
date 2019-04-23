@@ -5,28 +5,44 @@ using UnityEngine;
 public class AlienGeneration : MonoBehaviour
 {
     public GameObject alien;
-    //public GameObject parent;
+    public GameObject boss;
+    private GameObject actualBoss;
     public float newAlienRespawnTime; //gap time between bullet firing
-    float timeLimit; //gap time in real time units 
+    public float newBossRespawnTime;
+    private float timeLimitAlien; //gap time in real time units 
+    private float timeLimitBoss;
+    [HideInInspector] public bool canSpawnBoss;
 
-    // Start is called before the first frame update
     void Start()
     {
-        timeLimit = Time.time + newAlienRespawnTime; //set timer
+        timeLimitAlien = Time.time + newAlienRespawnTime; //set timer
+        timeLimitBoss = Time.time + newBossRespawnTime;
+        canSpawnBoss = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        float timeLeft = timeLimit - Time.time;
-        if (timeLeft < 0) //when time is up 
+
+        if (actualBoss == null && !canSpawnBoss)
         {
-            //GameObject hijo= Instantiate(alien, new Vector3(0, 0, 0), this.transform.rotation);
-            //hijo.transform.parent = parent.transform;
-            Instantiate(alien, new Vector3(0, 0, 0), this.transform.rotation);
-            timeLimit = Time.time + newAlienRespawnTime; //set new timer
+            Debug.Log("AAAAAAAAAAAA");
+            timeLimitBoss = Time.time + newBossRespawnTime;
+            canSpawnBoss = true;
         }
+        if (timeLimitAlien < Time.time) //when time is up 
+        {
+            
+            Instantiate(alien, new Vector3(0, 0, 0), this.transform.rotation);
+            timeLimitAlien = Time.time + newAlienRespawnTime; //set new timer
+        }
+
         
+        if (timeLimitBoss < Time.time && canSpawnBoss) //when time is up 
+        {
+            actualBoss = Instantiate(boss, new Vector3(0, 0, 0), this.transform.rotation);
+            canSpawnBoss = false;
+        }
+
     }
+
 }

@@ -8,6 +8,7 @@ public class enemyShootingMove : MonoBehaviour
     private int speed=15;
     public int MaxDistProjectile;
     public static bool change;
+    public GameObject impact;
 
     void Start()
     {
@@ -33,24 +34,17 @@ public class enemyShootingMove : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
-        if (over13_variables.rebounds && (other.gameObject.CompareTag("wall_rebounds_l") || other.gameObject.CompareTag("wall_rebounds_r") || other.gameObject.CompareTag("wall_rebounds_t")
-           || other.gameObject.CompareTag("wall_rebounds_b"))) //collides with the surrounding walls
+        
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("main_area"))
         {
-            if (rebounds_number < 3)
-            {
-                //left & right walls will switch the x value of the movement vector and randomize the z value 
-                if (other.gameObject.CompareTag("wall_rebounds_l") || other.gameObject.CompareTag("wall_rebounds_r"))
-                    rb.velocity = (new Vector3(-rb.velocity.x, 0.0f, Random.Range(-5.0f, 5.0f))).normalized * speed;
-                //top & bottom walls will switch the z value of the movement vector and randomize the x value 
-                if (other.gameObject.CompareTag("wall_rebounds_t") || other.gameObject.CompareTag("wall_rebounds_b"))
-                    rb.velocity = (new Vector3(Random.Range(-5.0f, 5.0f), 0.0f, -rb.velocity.z)).normalized * speed;
-                transform.LookAt(transform.position + rb.velocity.normalized); //The lookat vector will point towards the movement direction
-                rebounds_number++;
-            }
-            else
-            { //The third bounce will destroy the bullet
-                Destroy(this.gameObject);
-            }
+
+            Instantiate(impact, transform.position, transform.rotation);
+
+            Destroy(this.gameObject);
         }
     }
 }
