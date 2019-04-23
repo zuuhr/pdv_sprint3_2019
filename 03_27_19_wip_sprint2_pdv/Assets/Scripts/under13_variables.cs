@@ -29,7 +29,7 @@ public class under13_variables : MonoBehaviour
         else if (alienAppearance)
         {
             Debug.Log("Alien appearance"); //So we can check
-            Instantiate(alien, new Vector3(Random.Range(-12, 6), 0f, 16f), this.transform.rotation); 
+            Instantiate(alien, new Vector3(Random.Range(-12, 12), 0f, 16f), this.transform.rotation); 
             alienAppearance = false;
             timer = Time.time + 1; //set timer to spawn aliens
         }
