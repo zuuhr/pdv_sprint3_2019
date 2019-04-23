@@ -96,6 +96,9 @@ public class alien_boss_movement : MonoBehaviour
 
     void shoot()
     {
+
+        gameObject.GetComponent<AudioSource>().Play();// Plays the boss shooting sound
+
         //GameObject hijo = Instantiate(bullet, this.transform.position, this.transform.rotation);
         //hijo.transform.parent = parent.transform;
         Instantiate(bullet, this.transform.position, this.transform.rotation);

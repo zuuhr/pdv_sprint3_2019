@@ -50,6 +50,7 @@ public class alien_movementNew : MonoBehaviour
 
     void shoot()
     {
+        gameObject.GetComponent<AudioSource>().Play();//Plays the alien shooting sound
         Instantiate(bullet, this.transform.position, this.transform.rotation); //Spawns a bullet from that alien
     }
 

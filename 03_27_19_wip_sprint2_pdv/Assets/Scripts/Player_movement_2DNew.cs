@@ -28,8 +28,15 @@ public class Player_movement_2DNew : MonoBehaviour
     private bool whileShooting;
     float advanceTime;
 
+    AudioSource shot;
+    AudioSource dead;
+    
     void Start()
     {
+        var aSources = gameObject.GetComponents<AudioSource>();//vector with the audioSources
+        shot = aSources[0];//Audio used when the player shoots
+        dead = aSources[1];//Audio used when the player gets killed
+
         velocity = 0.01f;
         rb = GetComponent<Rigidbody>();
     }
@@ -93,6 +100,7 @@ public class Player_movement_2DNew : MonoBehaviour
 
         if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space)) && !whileShooting)
         { //shooting
+            shot.Play();//play shooting sound
             Instantiate(bullet, this.transform.position, this.transform.rotation);
             advanceTime = Time.time + 0.5f; //set timer cooldown
             whileShooting = true; //cooldown 
@@ -105,9 +113,10 @@ public class Player_movement_2DNew : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("boss")) //If the player hits a defensive wall or an alien
         {
+            dead.Play();//play dead sound. It really never sounds, because the change takes an instant
             Destroy(other.gameObject);
             SceneManager.LoadScene(gameOverScene); //game over scene
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,1.0f);
         }
     }
 }

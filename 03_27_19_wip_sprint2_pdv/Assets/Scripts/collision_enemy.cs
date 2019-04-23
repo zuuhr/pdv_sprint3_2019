@@ -28,7 +28,8 @@ public class collision_enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("alien") || other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("boss")) //Bullet collides
         {
-            Destroy(other.gameObject); 
+            GetComponent<AudioSource>().Play();//Play death/explosion sound
+            Destroy(other.gameObject,0.1f); 
             if (other.gameObject.CompareTag("alien")) {
                 over13_variables.add = true; //add points to the score
             }
@@ -38,7 +39,7 @@ public class collision_enemy : MonoBehaviour
             if (other.gameObject.CompareTag("Wall")) {
                 change = true; //To manage alien color change
             }
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.1f);
         }
         if ( over13_variables.rebounds && (other.gameObject.CompareTag("wall_rebounds_l") || other.gameObject.CompareTag("wall_rebounds_r") || other.gameObject.CompareTag("wall_rebounds_t") 
             || other.gameObject.CompareTag("wall_rebounds_b"))) //collides with the surrounding walls
