@@ -10,17 +10,27 @@ public class alien_movementNew : MonoBehaviour
     public int speed;
     private int xRand;
     private int zRand;
+    public float shootingRespawnTime; //gap time between bullet firing
+    float timeLimit; //gap time in real time units 
+    public GameObject bullet;
 
     void Start()
     {
+        timeLimit = Time.time + shootingRespawnTime;
         xRand = (int)Random.Range(-10, 10);
         zRand = (int)Random.Range(-10, 10);
         movement = new Vector3(xRand, 0, zRand) * speed;
-        transform.forward = transform.position + movement;
+        //transform.forward = transform.position + movement;
     }
 
     void Update()
     {
+        float timeLeft = timeLimit - Time.time;
+        if (timeLeft < 0) //when time is up 
+        {
+            shoot();
+            timeLimit = Time.time + shootingRespawnTime; //set new timer
+        }
         //default movement & PAUSE menu management
         if (Time.timeScale == 0)
         {
@@ -34,6 +44,10 @@ public class alien_movementNew : MonoBehaviour
         
     }
 
+    void shoot()
+    {
+        Instantiate(bullet, this.transform.position, this.transform.rotation); //Spawns a bullet from that alien
+    }
 
     private void OnTriggerExit(Collider collider)
     {
