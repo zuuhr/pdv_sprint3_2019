@@ -40,10 +40,11 @@ public class collision_enemy : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "main_area" || other.CompareTag("main_area"))
+        if (other.CompareTag("main_area"))
         {
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(0,0,0), Vector3.up);
 
-            Instantiate(impact, transform.position, transform.rotation);
+            Instantiate(impact, transform.position, rotation);
 
             Destroy(this.gameObject);
         }

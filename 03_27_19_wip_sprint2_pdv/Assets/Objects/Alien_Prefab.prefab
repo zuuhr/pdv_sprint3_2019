@@ -75,7 +75,7 @@ MonoBehaviour:
   speed: 5
   shootingRespawnTime: 2
   bullet: {fileID: 6435888723933901680, guid: bb01f1ef0222db142a54fd410551887e, type: 3}
-  impact: {fileID: 3676835483594814151, guid: a852851aa77fa5f4692273fb4eeedb1c, type: 3}
+  impact: {fileID: 1504013620821950452, guid: aaf5a4e70b0b8da46a2bf5d98a5036dc, type: 3}
 --- !u!54 &5629218023226110119
 Rigidbody:
   m_ObjectHideFlags: 0
