@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class alien_boss_bullet_script : MonoBehaviour
 {
     private Rigidbody rb; 
-    private int speed = 20;
+    private int speed = 5;
     private int rebounds_number; //variable that handles the # of times the bullet has bounced
     public static bool change; //variable that handles the color change 
     public GameObject impact;
@@ -12,9 +12,7 @@ public class alien_boss_bullet_script : MonoBehaviour
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>(); //acquires the rigidbody of the gameobject
-        //rb.velocity = new Vector3(0 , 0, -1) * speed; //initial moving direction
-        rb.velocity = transform.TransformDirection((Player_movement_2DNew.thisPosition - rb.position).normalized * speed);
-        //transform.LookAt(transform.position + rb.velocity); //The lookat vector will point towards the movement direction
+        rb.velocity = transform.forward * speed;
     }
 
     private void OnTriggerExit(Collider collider)
@@ -31,9 +29,9 @@ public class alien_boss_bullet_script : MonoBehaviour
         if ((other.gameObject.CompareTag("Player")) || (other.gameObject.CompareTag("Wall")))  //if the bullet hits either the player or a wall
         {
             
-            if (other.gameObject.CompareTag("Player"))  SceneManager.LoadScene("Menu_prueba_derrota"); //end game 
+            //if (other.gameObject.CompareTag("Player"))  SceneManager.LoadScene("Menu_prueba_derrota"); //end game 
             if (other.gameObject.CompareTag("Wall"))  change = true; //To manage alien color change 
-            Destroy(other.gameObject); //destroy the object colliding
+            //Destroy(other.gameObject); //destroy the object colliding
             Destroy(this.gameObject); //destroy this object
         }
         if (over13_variables.rebounds && (other.gameObject.CompareTag("wall_rebounds_l") || other.gameObject.CompareTag("wall_rebounds_r") || other.gameObject.CompareTag("wall_rebounds_t")

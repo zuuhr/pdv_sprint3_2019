@@ -14,23 +14,23 @@ public class ShowFinalScore_under13 : MonoBehaviour
         //PlayerPrefs.DeleteAll(); //use this line to reset the ranking
         //int punt = over13_variables.score2;
         int punt = PlayerPrefs.GetInt("actualscore", 0);
-        //scoreText.text = "Score: " + punt;
-        int i = 10;//counter variable
-        int final = 19;//constant 
+        scoreText.text = "Score: " + punt;
+        int i = 0;//counter variable
+        int final = 9;//constant 
         int terminar = 0;//used as boolean (0-1)
         string marcador;//to save the score in the correct key
         string aux;//variables used to keep the correct order in the ranking
         string aux2;
         string aux3;
         string aux4;
-        if (PlayerPrefs.GetInt("actualscore", 0) >= PlayerPrefs.GetInt("scoresp10", 0))
+        if (PlayerPrefs.GetInt("actualscore", 0) >= PlayerPrefs.GetInt("scoresu0", 0))
         {
             record.enabled = true;
         }
         do
         {
-            marcador = "scoresp" + i;//to update the keys 
-            marcador2 = "namep" + i;
+            marcador = "scoresu" + i;//to update the keys 
+            marcador2 = "nameu" + i;
             if (punt < PlayerPrefs.GetInt(marcador, 0))
             {
                 i++;//to get the correct position
@@ -39,11 +39,11 @@ public class ShowFinalScore_under13 : MonoBehaviour
             {
                 for (int j = 0; j != (10 - i); j++)
                 {
-                    aux = "scoresp" + (final - j);//to reorder the ranking, both name and score
-                    aux2 = "scoresp" + (final - j - 1);
+                    aux = "scoresu" + (final - j);//to reorder the ranking, both name and score
+                    aux2 = "scoresu" + (final - j - 1);
                     PlayerPrefs.SetInt(aux, (PlayerPrefs.GetInt(aux2, 0)));
-                    aux3 = "namep" + (final - j);
-                    aux4 = "namep" + (final - j - 1);
+                    aux3 = "nameu" + (final - j);
+                    aux4 = "nameu" + (final - j - 1);
                     PlayerPrefs.SetString(aux3, (PlayerPrefs.GetString(aux4, "Desconocido")));
                 }
                 PlayerPrefs.SetInt(marcador, punt);//to save the score in its ranking position

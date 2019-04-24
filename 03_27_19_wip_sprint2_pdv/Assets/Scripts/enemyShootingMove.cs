@@ -24,9 +24,9 @@ public class enemyShootingMove : MonoBehaviour
     {
         if ((other.gameObject.CompareTag("Player")) || (other.gameObject.CompareTag("Wall")))  //if the bullet hits either the player or a wall
         {
-            Destroy(other.gameObject); //destroy the object colliding
+            //Destroy(other.gameObject); //destroy the object colliding
             if (other.gameObject.CompareTag("Player")){ 
-                SceneManager.LoadScene("Menu_prueba_derrota"); //end game 
+               // SceneManager.LoadScene("Menu_prueba_derrota"); //end game 
             }
             if (other.gameObject.CompareTag("Wall"))
             {
