@@ -18,10 +18,15 @@ public class Player_movement_2DNew : MonoBehaviour
 
     private int right;
 
+    private Transform body;
+    private GameObject coneleft;
+    private GameObject coneright;
+    public float rotationAngle;
+
+
     public static Vector3 lookat;
     public static Vector3 thisPosition;
     
-
     public GameObject bullet;
     private bool whileShooting;
     float advanceTime;
@@ -37,6 +42,8 @@ public class Player_movement_2DNew : MonoBehaviour
 
         velocity = 0.01f;
         rb = GetComponent<Rigidbody>();
+
+        body = transform.GetChild(0);
     }
     private void FixedUpdate()
     {
@@ -44,10 +51,27 @@ public class Player_movement_2DNew : MonoBehaviour
         Vector3 tempTrans = new Vector3();
         if (Input.GetKey("up")) tempTrans.z += 1; //up
         if (Input.GetKey("down")) tempTrans.z -= 1;  //down
-        
 
-        if (Input.GetKey("left")) right -= 1;
-        if (Input.GetKey("right")) right += 1;
+        if (Input.GetKey("left"))
+        {
+            right -= 1;
+
+            if (body.rotation.eulerAngles.z < 45 || body.rotation.eulerAngles.z > 315) body.Rotate(new Vector3(0, 0, 1), rotationAngle);
+            else {
+                
+            }
+        }
+        else if (Input.GetKey("right"))
+        {
+            right += 1;
+            if (body.rotation.eulerAngles.z > 315 || body.rotation.eulerAngles.z < 45) body.Rotate(new Vector3(0, 0, -1), rotationAngle);
+            else {
+               // body.Rotate(new Vector3(0, 0, 1), 1);
+            }
+        }
+        else if (body.rotation.eulerAngles.z > 310 && body.rotation.eulerAngles.z < 359.5 ) body.Rotate(new Vector3(0, 0, 1), rotationAngle);
+        else if (body.rotation.eulerAngles.z < 50 && body.rotation.eulerAngles.z > 0.5) body.Rotate(new Vector3(0, 0, -1), rotationAngle);
+
         if (right > 10) right = 10;
         if (right < -10) right = -10;
 
@@ -78,7 +102,13 @@ public class Player_movement_2DNew : MonoBehaviour
         }
         float timeLeft = advanceTime - Time.time; //duration 
         if (timeLeft < 0 && whileShooting) whileShooting = false;//time's up
+
     }
+
+
+
+      
+        
 
     private void OnTriggerEnter(Collider other)
     {
