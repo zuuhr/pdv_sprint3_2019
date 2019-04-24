@@ -19,11 +19,7 @@ public class collision_enemy : MonoBehaviour
         rb.velocity = lookat * speed; //The bullet direction is where the player is looking
         transform.LookAt(transform.position + rb.velocity.normalized); //The bullet orientation is where the player is looking
     }
-    void Update()
-    {
-        //if ((rb.position - Player_movement_2D.thisPosition).magnitude > MaxDistProjectile) Destroy(this);  //If the bullet gets too far away 
-        //if (over13_variables.rebounds) MaxDistProjectile *= 100; 
-    }
+    
     private void OnTriggerEnter (Collider other) 
     {
         if (other.gameObject.CompareTag("alien") || other.gameObject.CompareTag("boss")) //Bullet collides
@@ -61,10 +57,11 @@ public class collision_enemy : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "main_area" || other.CompareTag("main_area"))
+        if (other.CompareTag("main_area"))
         {
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(0,0,0), Vector3.up);
 
-            Instantiate(impact, transform.position, transform.rotation);
+            Instantiate(impact, transform.position, rotation);
 
             Destroy(this.gameObject);
         }
