@@ -7,6 +7,7 @@ public class alien_boss_bullet_script : MonoBehaviour
     private int speed = 5;
     private int rebounds_number; //variable that handles the # of times the bullet has bounced
     public static bool change; //variable that handles the color change 
+    public GameObject impact;
 
     private void Start()
     {
@@ -18,8 +19,9 @@ public class alien_boss_bullet_script : MonoBehaviour
     {
         if (collider.tag == "main_area") //if alien is leaving the game area
         {
+            Instantiate(impact, transform.position, transform.rotation);
             Destroy(gameObject);
-        }
+}
     }
 
     private void OnTriggerEnter(Collider other)
