@@ -105,7 +105,7 @@ public class menu : MonoBehaviour
         {
             if (posAA.x >= -0.05 && posAA.y <= 1 && posAA.z <= -9) //if the alien is near the screen
             {
-                SceneManager.LoadScene("Ranking");
+                SceneManager.LoadScene("tutorial_scene");
             }
             else                                                //if the alien isn't near the screen
             {
@@ -124,7 +124,7 @@ public class menu : MonoBehaviour
         {
             if (posAB.x < 0 && posAB.y <= 1 && posAB.z <= -9) //if the alien is near the screen
             {
-                SceneManager.LoadScene("Ranking");
+                SceneManager.LoadScene("Credits");
             }
             else                                                //if the alien isn't near the screen
             {
@@ -160,7 +160,7 @@ public class menu : MonoBehaviour
         {
             if (positionUnder.y >= 3.3) //if the ships goes out of the screen
             {
-                SceneManager.LoadScene("Ranking");
+                SceneManager.LoadScene("Ranking_minus13");
             }
             else if (positionUnder.y < 3.3) //if the ship isn't out of the screen
             {
@@ -174,7 +174,7 @@ public class menu : MonoBehaviour
         {
             if (pos_boss.z <= -7) //if the alien is near the screen
             {
-                SceneManager.LoadScene("Ranking");
+                SceneManager.LoadScene("select_lvl");
             }
             else                    //if the alien isn't near the screen
             {
