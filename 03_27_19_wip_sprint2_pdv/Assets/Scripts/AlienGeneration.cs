@@ -25,7 +25,6 @@ public class AlienGeneration : MonoBehaviour
 
         if (actualBoss == null && !canSpawnBoss)
         {
-            Debug.Log("AAAAAAAAAAAA");
             timeLimitBoss = Time.time + newBossRespawnTime;
             canSpawnBoss = true;
         }
