@@ -31,12 +31,6 @@ public class alien_movementNew : MonoBehaviour
         transform.LookAt(Player_movement_2DNew.thisPosition);
         movement = Player_movement_2DNew.thisPosition.normalized * speed;
 
-        float timeLeft = timeLimit - Time.time;
-        if (timeLeft < 0) //when time is up 
-        {
-            shoot();
-            timeLimit = Time.time + shootingRespawnTime; //set new timer
-        }
         //default movement & PAUSE menu management
         if (Time.timeScale == 0)
         {
@@ -50,11 +44,6 @@ public class alien_movementNew : MonoBehaviour
         
     }
 
-    void shoot()
-    {
-        gameObject.GetComponent<AudioSource>().Play();//Plays the alien shooting sound
-        Instantiate(bullet, this.transform.position, this.transform.rotation); //Spawns a bullet from that alien
-    }
 
     private void OnTriggerExit(Collider collider)
     {
