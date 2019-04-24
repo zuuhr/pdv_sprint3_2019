@@ -28,10 +28,10 @@ public class alien_boss_movement : MonoBehaviour
 
         #region MOVEMENT
         transform.LookAt(Player_movement_2DNew.thisPosition);
-
+        //transform.forward = Player_movement_2DNew.thisPosition - transform.position;
         if (!nextPhase) //FIRST PHASE 
         {
-            transform.Translate(movement * Time.deltaTime); //movement
+            transform.Translate(movement * Time.deltaTime, Space.World); //movement
             if (transform.position.x > xFinish)
             {
                 nextPhase = true;
@@ -42,11 +42,11 @@ public class alien_boss_movement : MonoBehaviour
             Debug.Log("SEGUNDA FASE");
             transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), angle);
         }
-
+        
         #endregion
 
 
-        /*#region SHOOTING
+        #region SHOOTING
         if (shotNumber <= bulletLimit)
         {
             if(shotNumber%2==0) shoot();
@@ -59,7 +59,7 @@ public class alien_boss_movement : MonoBehaviour
             if (shotNumber == (bulletLimit*10))
                 shotNumber = 0;
         }
-        #endregion SHOOTING*/
+        #endregion SHOOTING
 
 
 

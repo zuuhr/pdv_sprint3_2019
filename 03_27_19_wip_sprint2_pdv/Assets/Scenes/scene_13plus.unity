@@ -310,15 +310,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.19695628
+      value: 0.19696
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8303666
+      value: 0.83037
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.11111212
+      value: -0.11111
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalRotation.x
@@ -354,15 +354,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalScale.x
-      value: 26.667694
+      value: 32.11057
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalScale.y
-      value: 26.667694
+      value: 32.11057
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_LocalScale.z
-      value: 26.667694
+      value: 32.11057
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: efc58c61327103c46963a55f90820bee, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5232,11 +5232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d1da3f17350b84894ff6339613450c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableMovementAlien: {fileID: 2182940210089866695, guid: df733908d66196046901b50f2ce2e65b,
-    type: 3}
   disableMovementPlayer: {fileID: 0}
-  disableEnemyShot: {fileID: 6435888723933901691, guid: bb01f1ef0222db142a54fd410551887e,
-    type: 3}
+  disableWallRotation: {fileID: 0}
 --- !u!114 &291312505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6503,8 +6500,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118264300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 45.501495, y: 45.501495, z: 45.501495}
+  m_LocalPosition: {x: -0.040207, y: -0.16951, z: 0.022683}
+  m_LocalScale: {x: 54.788353, y: 54.788353, z: 54.788353}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -7691,7 +7688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0e25cc575df33544bacfadd29cfa666d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0e25cc575df33544bacfadd29cfa666d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7699,7 +7696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0e25cc575df33544bacfadd29cfa666d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0e25cc575df33544bacfadd29cfa666d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8445,7 +8442,7 @@ PrefabInstance:
     - target: {fileID: 4508689978140610755, guid: 4e3404dab1e503640a30105801908477,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4508689978140610759, guid: 4e3404dab1e503640a30105801908477,
         type: 3}
@@ -8512,6 +8509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: newBossRespawnTime
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477,
+        type: 3}
+      propertyPath: newAlienRespawnTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e3404dab1e503640a30105801908477, type: 3}

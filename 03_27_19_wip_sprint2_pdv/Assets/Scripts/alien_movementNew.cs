@@ -13,6 +13,7 @@ public class alien_movementNew : MonoBehaviour
     public float shootingRespawnTime; //gap time between bullet firing
     float timeLimit; //gap time in real time units 
     public GameObject bullet;
+    public GameObject impact;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class alien_movementNew : MonoBehaviour
     void Update()
     {
         transform.LookAt(Player_movement_2DNew.thisPosition);
+        movement = Player_movement_2DNew.thisPosition.normalized * speed;
 
         float timeLeft = timeLimit - Time.time;
         if (timeLeft < 0) //when time is up 
@@ -42,7 +44,7 @@ public class alien_movementNew : MonoBehaviour
         }
         else if (Time.timeScale == 1)
         {
-            transform.Translate(movement * Time.deltaTime); //Resumes
+            transform.Translate(movement * Time.deltaTime, Space.World); //Resumes
         }
 
         
@@ -58,7 +60,8 @@ public class alien_movementNew : MonoBehaviour
     {
         if (collider.tag == "main_area") //if alien is leaving the game area
         {
-           Destroy(gameObject);
+            Instantiate(impact, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 

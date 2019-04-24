@@ -26,7 +26,7 @@ public class collision_enemy : MonoBehaviour
     }
     private void OnTriggerEnter (Collider other) 
     {
-        if (other.gameObject.CompareTag("alien") || other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("boss")) //Bullet collides
+        if (other.gameObject.CompareTag("alien") || other.gameObject.CompareTag("boss")) //Bullet collides
         {
             GetComponent<AudioSource>().Play();//Play death/explosion sound
             Destroy(other.gameObject,0.1f); 
@@ -35,9 +35,6 @@ public class collision_enemy : MonoBehaviour
             }
             if (other.gameObject.CompareTag("boss")) {
                 over13_variables.addBoss = true; //add points to the score
-            }
-            if (other.gameObject.CompareTag("Wall")) {
-                change = true; //To manage alien color change
             }
             Destroy(this.gameObject, 0.1f);
         }
