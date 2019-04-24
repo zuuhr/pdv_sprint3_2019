@@ -1608,7 +1608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5b4587faf4ecc4da44863c76a7f769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 4316411846033557361, guid: 296b0a78de71c1f42807c8792d22c150, type: 3}
   bulletLimit: 10
   angle: 1
 --- !u!136 &5165834373823467545

@@ -20,15 +20,14 @@ public class alien_movementNew : MonoBehaviour
         xRand = (int)Random.Range(-10, 10);
         zRand = (int)Random.Range(-10, 10);
         movement = new Vector3(xRand, 0, zRand) * speed;
-
+        transform.LookAt(Player_movement_2DNew.thisPosition);
         //transform.forward = Player_movement_2DNew.thisPosition - transform.position;
-        
+
     }
 
     void Update()
     {
-        transform.LookAt(Player_movement_2DNew.thisPosition);
-
+       
         float timeLeft = timeLimit - Time.time;
         if (timeLeft < 0) //when time is up 
         {
@@ -52,6 +51,7 @@ public class alien_movementNew : MonoBehaviour
     {
         gameObject.GetComponent<AudioSource>().Play();//Plays the alien shooting sound
         Instantiate(bullet, this.transform.position, this.transform.rotation); //Spawns a bullet from that alien
+        
     }
 
     private void OnTriggerExit(Collider collider)
