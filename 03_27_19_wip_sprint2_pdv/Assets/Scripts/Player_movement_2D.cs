@@ -46,9 +46,9 @@ public class Player_movement_2D : MonoBehaviour
         if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("boss")) //If the player hits a defensive wall or an alien
         {
             Destroy(other.gameObject);
-            if((PlayerPrefs.GetInt("scoresp9",0)) <= (PlayerPrefs.GetInt("actualscore", 0))){ 
+            if((PlayerPrefs.GetInt("scoresu9",0)) <= (PlayerPrefs.GetInt("actualscore", 0))){ 
                 SceneManager.LoadScene(gameOverScene); //game over scene if your score is in the ranking
-            }else if ((PlayerPrefs.GetInt("scoresp9", 0)) > (PlayerPrefs.GetInt("actualscore", 0))){
+            }else if ((PlayerPrefs.GetInt("scoresu9", 0)) > (PlayerPrefs.GetInt("actualscore", 0))){
                 SceneManager.LoadScene("End_13minus");//game over scene if your score isn't in the ranking
             }
             Destroy(this.gameObject);
