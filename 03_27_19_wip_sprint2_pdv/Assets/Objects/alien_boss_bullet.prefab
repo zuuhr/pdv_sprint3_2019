@@ -109,7 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414b18005ec736449a15750b6e9f59ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impact: {fileID: 3676835483594814151, guid: a852851aa77fa5f4692273fb4eeedb1c, type: 3}
 --- !u!65 &4643434289674340040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -170,7 +169,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -988,7 +987,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
