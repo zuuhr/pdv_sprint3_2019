@@ -29,7 +29,7 @@ public class alien_boss_bullet_script : MonoBehaviour
             Destroy(this.gameObject); //destroy this object
             if (other.gameObject.CompareTag("Player"))  SceneManager.LoadScene("End_13plus"); //end game 
             if (other.gameObject.CompareTag("Wall"))  change = true; //To manage alien color change 
-            Destroy(other.gameObject); //destroy the object colliding
+            Destroy(other.gameObject, 0.1f); //destroy the object colliding
         }
         
     }
