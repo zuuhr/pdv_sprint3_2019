@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDistProjectile: 200
-  impact: {fileID: 100000, guid: f1c12853b47e30e479d4c90d7fe69465, type: 3}
+  impact: {fileID: 3676835483594814151, guid: a852851aa77fa5f4692273fb4eeedb1c, type: 3}
 --- !u!65 &248771152976250280
 BoxCollider:
   m_ObjectHideFlags: 0
