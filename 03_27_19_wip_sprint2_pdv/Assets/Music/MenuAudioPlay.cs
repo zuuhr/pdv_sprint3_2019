@@ -5,10 +5,10 @@ using UnityEngine;
 public class MenuAudioPlay : MonoBehaviour
 {
     public AudioSource a;
-
+    public AudioSource b;
     void Start()
     {
-        Invoke("audioPlay", 27.28f);
+        Invoke("audioPlay", b.clip.length);
     }
 
     void audioPlay()
