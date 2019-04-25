@@ -17,6 +17,7 @@ TagManager:
   - boss
   - bullet
   - hole
+  - bossBullet
   layers:
   - Default
   - TransparentFX

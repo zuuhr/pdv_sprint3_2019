@@ -124,8 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   MaxDistProjectile: 10
-  impact: {fileID: 3676835483594814151, guid: a852851aa77fa5f4692273fb4eeedb1c, type: 3}
-  death: {fileID: 8300000, guid: 5c3a7a6a6f10a344ea8ddce4c9b645ea, type: 3}
+  impact: {fileID: 1504013620821950452, guid: aaf5a4e70b0b8da46a2bf5d98a5036dc, type: 3}
 --- !u!82 &4816018838254805970
 AudioSource:
   m_ObjectHideFlags: 0

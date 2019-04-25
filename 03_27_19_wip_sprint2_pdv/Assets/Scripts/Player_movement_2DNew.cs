@@ -17,13 +17,16 @@ public class Player_movement_2DNew : MonoBehaviour
     private float velocity;
 
     private int right;
-    private int left;
+
+    private Transform body;
+    private GameObject coneleft;
+    private GameObject coneright;
+    public float rotationAngle;
+
 
     public static Vector3 lookat;
     public static Vector3 thisPosition;
-
-
-
+    
     public GameObject bullet;
     private bool whileShooting;
     float advanceTime;
@@ -39,32 +42,45 @@ public class Player_movement_2DNew : MonoBehaviour
 
         velocity = 0.01f;
         rb = GetComponent<Rigidbody>();
+
+        body = transform.GetChild(0);
     }
     private void FixedUpdate()
     {
         #region MOVEMENT
         Vector3 tempTrans = new Vector3();
-        //if (Input.GetKey("up")) velocity += acc; //up
-        //if (Input.GetKey("down")) velocity -= acc; //down
         if (Input.GetKey("up")) tempTrans.z += 1; //up
         if (Input.GetKey("down")) tempTrans.z -= 1;  //down
 
-        //if (Input.GetKeyDown("right")) right = 1; //right
-        //if (Input.GetKeyUp("right")) right = 0; //right
-        //
-        //if (Input.GetKeyDown("left")) left = 1; //left
-        //if (Input.GetKeyUp("left")) left = 0; //right
+        #region ANIMACION DE ROTACION
+        if (Input.GetKey("left"))
+        {
+            right -= 1;
+            transform.GetChild(2).gameObject.SetActive(true);
+            if (body.rotation.eulerAngles.z < 45 || body.rotation.eulerAngles.z > 310) body.Rotate(new Vector3(0, 0, 1), rotationAngle);        
+        }
+        else if (Input.GetKey("right"))
+        {
+            right += 1;
+            transform.GetChild(3).gameObject.SetActive(true);
+            if (body.rotation.eulerAngles.z > 315 || body.rotation.eulerAngles.z < 50) body.Rotate(new Vector3(0, 0, -1), rotationAngle);
+        }
+        else if (body.rotation.eulerAngles.z > 310 && body.rotation.eulerAngles.z < 359.5)
+        {
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            body.Rotate(new Vector3(0, 0, 1), rotationAngle);
+        }
+        else if (body.rotation.eulerAngles.z < 50 && body.rotation.eulerAngles.z > 0.5)
+        {
+            body.Rotate(new Vector3(0, 0, -1), rotationAngle);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+        }
+        #endregion
 
-        if (Input.GetKey("left")) right -= 1;
-        if (Input.GetKey("right")) right += 1;
         if (right > 10) right = 10;
         if (right < -10) right = -10;
-        //transform.Rotate(new Vector3(0, 1, 0), angle * right - angle * left);
-        //rb.AddTorque(new Vector3(0, angle * right - angle * left, 0), ForceMode.VelocityChange);
-        //if (left == 0 && right == 0) rb.AddTorque(rb);
-        //rb.MoveRotation(transform.rotation);
-        //if (Math.Abs(velocity) >= maxSpeed) velocity = maxSpeed * Math.Sign(velocity); //the velocity cannot be over the maximun speed set
-        // rb.position += transform.forward.normalized * velocity;
 
         tempTrans = tempTrans.normalized * acc * Time.deltaTime;
         if(tempTrans.magnitude != 0)
@@ -76,28 +92,14 @@ public class Player_movement_2DNew : MonoBehaviour
         Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, angle * right, 0) * Time.deltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
 
-
-        //transform.LookAt(transform.position + lookat);
-
-        //lookat = Vector3.Normalize(new Vector3(0.0f, 0.0f, velocity));
+        
         thisPosition = transform.position;
-        //transform.LookAt(transform.position + lookat); //lookat direction is movement direction
-        //if no buttons are pressed the player will start to slow down
         lookat = this.transform.forward;
 
         #endregion 
     }
     void Update()
     {
-        
-
-
-
-
-
-
-
-
         if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space)) && !whileShooting)
         { //shooting
             shot.Play();//play shooting sound
@@ -107,7 +109,13 @@ public class Player_movement_2DNew : MonoBehaviour
         }
         float timeLeft = advanceTime - Time.time; //duration 
         if (timeLeft < 0 && whileShooting) whileShooting = false;//time's up
+
     }
+
+
+
+      
+        
 
     private void OnTriggerEnter(Collider other)
     {
