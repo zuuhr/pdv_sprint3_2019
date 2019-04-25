@@ -42,6 +42,7 @@ public class menu : MonoBehaviour
 
 
         /*ALIENS MOVEMENT*/
+
         //Debug.Log(aux);
         if (aux == -50) //time of oscilation
             dir = true;
@@ -57,11 +58,13 @@ public class menu : MonoBehaviour
         if (dir == true)
         {
             aux += 1;
-            if (controls_text == true) { 
+            if (controls_text == true)
+            { 
             posA.y -= 1;
             posAA.y -= (float)0.009;    //if the variable  dir is true the alien A moves from up to down
             }
-            if (credits_text == true) { 
+            if (credits_text == true)
+            { 
             posB.y += 1;                // and the alien B moves from down to up
             posAB.y += (float)0.009;
             }
@@ -88,18 +91,19 @@ public class menu : MonoBehaviour
         alienB.transform.position = posAB;
 
         
+        /*OBJECTS ANIMATION WHEN YOU CLICK THE BUTTONS*/
         
         positionOver = ship_over.transform.position; //the ships' positions
         positionUnder = ship_under.transform.position;
 
-        buttonA.onClick.AddListener(offControls); //if you click the Ranking -13 button
+        buttonA.onClick.AddListener(offControls); //if you click the control button
         if (controls_text == false)
         {
-            if (posAA.x >= -0.05 && posAA.y <= 1 && posAA.z <=-9) //if the alien goes out of the screen
+            if (posAA.x >= -0.05 && posAA.y <= 1 && posAA.z <=-9) //if the alien is near the screen
             {
                 SceneManager.LoadScene("Ranking");
             }
-            else                                                //if the alien isn't out of the screen
+            else                                                //if the alien isn't near the screen
             {
                 if(posAA.x < -0.05)
                     posAA.x += (float)0.05;
@@ -111,14 +115,14 @@ public class menu : MonoBehaviour
             }
         }
 
-        buttonB.onClick.AddListener(offCredits); //if you click the Ranking -13 button
+        buttonB.onClick.AddListener(offCredits); //if you click the credits button
         if (credits_text == false)
         {
-            if (posAB.x < 0 && posAB.y <= 1 && posAB.z <= -9) //if the alien goes out of the screen
+            if (posAB.x < 0 && posAB.y <= 1 && posAB.z <= -9) //if the alien is near the screen
             {
                 SceneManager.LoadScene("Ranking");
             }
-            else                                                //if the alien isn't out of the screen
+            else                                                //if the alien isn't near the screen
             {
                 if (posAB.x >= 0)
                     posAB.x -= (float)0.05;
@@ -160,14 +164,14 @@ public class menu : MonoBehaviour
             }
         }
 
-        buttonE.onClick.AddListener(offPlay); //if you click the Ranking -13 button
+        buttonE.onClick.AddListener(offPlay); //if you click the play button
         if (play_text == false)
         {
-            if (pos_boss.z <= -7.5) //if the alien goes out of the screen
+            if (pos_boss.z <= -7.5) //if the alien is near the screen
             {
                 SceneManager.LoadScene("Ranking");
             }
-            else                                                //if the alien isn't out of the screen
+            else                    //if the alien isn't near the screen
             {
                 if (pos_boss.z > -7.5)
                     pos_boss.z -= (float)0.03;
