@@ -22,7 +22,7 @@ MonoBehaviour:
         sourceOpacity: 1
         motionImageOpacity: 0
         motionImageAmplitude: 16
-        motionVectorsOpacity: 1
+        motionVectorsOpacity: 0.36
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
@@ -56,7 +56,7 @@ MonoBehaviour:
       reflection:
         blendType: 0
         reflectionQuality: 2
-        maxDistance: 100
+        maxDistance: 0.1
         iterationCount: 256
         stepSize: 3
         widthModifier: 0.5
@@ -98,13 +98,13 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 1
-        threshold: 5
-        softKnee: 0.424
-        radius: 1
+        intensity: 3.52
+        threshold: 1.44
+        softKnee: 0.79
+        radius: 2
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
@@ -309,14 +309,14 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0.159
+      intensity: 0.6
   grain:
     m_Enabled: 1
     m_Settings:
       colored: 1
-      intensity: 0.935
-      size: 1
-      luminanceContribution: 0.8
+      intensity: 0.6
+      size: 0.9
+      luminanceContribution: 0.747
   vignette:
     m_Enabled: 0
     m_Settings:
