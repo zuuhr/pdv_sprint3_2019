@@ -52,25 +52,32 @@ public class Player_movement_2DNew : MonoBehaviour
         if (Input.GetKey("up")) tempTrans.z += 1; //up
         if (Input.GetKey("down")) tempTrans.z -= 1;  //down
 
+        #region ANIMACION DE ROTACION
         if (Input.GetKey("left"))
         {
             right -= 1;
-
-            if (body.rotation.eulerAngles.z < 45 || body.rotation.eulerAngles.z > 315) body.Rotate(new Vector3(0, 0, 1), rotationAngle);
-            else {
-                
-            }
+            transform.GetChild(2).gameObject.SetActive(true);
+            if (body.rotation.eulerAngles.z < 45 || body.rotation.eulerAngles.z > 310) body.Rotate(new Vector3(0, 0, 1), rotationAngle);        
         }
         else if (Input.GetKey("right"))
         {
             right += 1;
-            if (body.rotation.eulerAngles.z > 315 || body.rotation.eulerAngles.z < 45) body.Rotate(new Vector3(0, 0, -1), rotationAngle);
-            else {
-               // body.Rotate(new Vector3(0, 0, 1), 1);
-            }
+            transform.GetChild(3).gameObject.SetActive(true);
+            if (body.rotation.eulerAngles.z > 315 || body.rotation.eulerAngles.z < 50) body.Rotate(new Vector3(0, 0, -1), rotationAngle);
         }
-        else if (body.rotation.eulerAngles.z > 310 && body.rotation.eulerAngles.z < 359.5 ) body.Rotate(new Vector3(0, 0, 1), rotationAngle);
-        else if (body.rotation.eulerAngles.z < 50 && body.rotation.eulerAngles.z > 0.5) body.Rotate(new Vector3(0, 0, -1), rotationAngle);
+        else if (body.rotation.eulerAngles.z > 310 && body.rotation.eulerAngles.z < 359.5)
+        {
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            body.Rotate(new Vector3(0, 0, 1), rotationAngle);
+        }
+        else if (body.rotation.eulerAngles.z < 50 && body.rotation.eulerAngles.z > 0.5)
+        {
+            body.Rotate(new Vector3(0, 0, -1), rotationAngle);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+        }
+        #endregion
 
         if (right > 10) right = 10;
         if (right < -10) right = -10;
