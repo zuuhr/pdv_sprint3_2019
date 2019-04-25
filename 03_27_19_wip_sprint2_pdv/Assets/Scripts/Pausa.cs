@@ -7,7 +7,8 @@ public class Pausa : MonoBehaviour
     //VARIABLES
     Canvas canvas;//Canvas object
     public Player_movement_2DNew disableMovementPlayer;//gameobject that refers to the player's movement
-    public wall_rotation disableWallRotation;
+    public wall_rotation disableWallRotation;//gameobject that refers to the rotation of the walls
+    public AlienGeneration disableAlienGeneration;//gameobject that refers to the generation of the aliens
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class Pausa : MonoBehaviour
         canvas.enabled = false;//at the first time, we don´t show the canvas until the player clicks on the Escape key
         disableMovementPlayer = GameObject.Find("NAVE").GetComponent<Player_movement_2DNew>();//assign the player to the gameobject that refers to the aliens' movement
         disableWallRotation = GameObject.Find("Walls").GetComponent<wall_rotation>();
+        disableAlienGeneration = GameObject.Find("mothership").GetComponent<AlienGeneration>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Pausa : MonoBehaviour
                 canvas.enabled = true;
                 disableMovementPlayer.enabled = false;
                 disableWallRotation.enabled = false;
+                disableAlienGeneration.enabled = false;
                 Time.timeScale = 0;
             }
             else//otherwise, we make the pause canvas invisible
@@ -38,6 +41,7 @@ public class Pausa : MonoBehaviour
                 canvas.enabled = false;
                 disableMovementPlayer.enabled = true;
                 disableWallRotation.enabled = true;
+                disableAlienGeneration.enabled = true;
                 Time.timeScale = 1;
             }
         }

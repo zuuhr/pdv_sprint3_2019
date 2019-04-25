@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e486a22623fae409410025e6ddb3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alien: {fileID: 0}
+  alien: {fileID: 2182940210089866690, guid: df733908d66196046901b50f2ce2e65b, type: 3}
   boss: {fileID: 4953795557901210326, guid: 8d7f9da7985bd0c44ae9c1709a68fad4, type: 3}
-  newAlienRespawnTime: 6
-  newBossRespawnTime: 3
+  newAlienRespawnTime: 2
+  newBossRespawnTime: 10
   canSpawnBoss: 0
