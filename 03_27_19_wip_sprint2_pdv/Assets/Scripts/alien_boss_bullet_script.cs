@@ -26,10 +26,10 @@ public class alien_boss_bullet_script : MonoBehaviour
     {
         if ((other.gameObject.CompareTag("Player")) || (other.gameObject.CompareTag("Wall")))  //if the bullet hits either the player or a wall
         {
-            Destroy(other.gameObject); //destroy the object colliding
+            Destroy(this.gameObject); //destroy this object
             if (other.gameObject.CompareTag("Player"))  SceneManager.LoadScene("End_13plus"); //end game 
             if (other.gameObject.CompareTag("Wall"))  change = true; //To manage alien color change 
-            Destroy(this.gameObject); //destroy this object
+            Destroy(other.gameObject); //destroy the object colliding
         }
         
     }
