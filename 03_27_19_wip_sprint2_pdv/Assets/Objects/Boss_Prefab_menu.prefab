@@ -1548,8 +1548,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4953795557901176566}
   - component: {fileID: 4953795557891858690}
-  - component: {fileID: 5165834373823467545}
   - component: {fileID: 5979327622357107155}
+  - component: {fileID: 8615549805541090218}
   m_Layer: 0
   m_Name: Boss_Prefab_menu
   m_TagString: boss
@@ -1595,20 +1595,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &5165834373823467545
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4953795557901210326}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.8618622
-  m_Height: 4.460829
-  m_Direction: 1
-  m_Center: {x: -0.16571665, y: 0.04422283, z: 1.9885122}
 --- !u!82 &5979327622357107155
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1705,6 +1691,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &8615549805541090218
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953795557901210326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.9329822
+  m_Height: 4.681173
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4953795557901210328
 GameObject:
   m_ObjectHideFlags: 0
