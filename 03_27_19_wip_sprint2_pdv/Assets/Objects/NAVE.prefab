@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 2003877908974636057}
   - component: {fileID: 2003877908974636056}
   - component: {fileID: 2003877908974636059}
+  - component: {fileID: 2232311904405500585}
   m_Layer: 0
   m_Name: NAVE
   m_TagString: Player
@@ -270,7 +271,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2003877908338998105}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 5.5161667
   m_Height: 22.002024
   m_Direction: 2
@@ -486,6 +487,19 @@ MonoBehaviour:
   angle: 7
   rotationAngle: 0
   bullet: {fileID: 4055482303244558547, guid: 98cb3961c5f66754285e69453b77fbba, type: 3}
+--- !u!135 &2232311904405500585
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003877908338998105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6.2575097
+  m_Center: {x: -0.06963747, y: -0.12620111, z: 2.0266972}
 --- !u!1 &2003877908338998107
 GameObject:
   m_ObjectHideFlags: 0

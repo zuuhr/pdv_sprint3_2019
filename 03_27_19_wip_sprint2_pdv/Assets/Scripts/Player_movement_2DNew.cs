@@ -90,12 +90,12 @@ public class Player_movement_2DNew : MonoBehaviour
         rb.MovePosition(transform.position + tempTrans + transform.forward.normalized * velocity);
 
         Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, angle * right, 0) * Time.deltaTime);
-        rb.MoveRotation(rb.rotation * deltaRotation);
+        rb.MoveRotation(rb.rotation.normalized * deltaRotation);
 
-        
+
         thisPosition = transform.position;
         lookat = this.transform.forward;
-
+        
         #endregion 
     }
     void Update()
@@ -109,19 +109,13 @@ public class Player_movement_2DNew : MonoBehaviour
         }
         float timeLeft = advanceTime - Time.time; //duration 
         if (timeLeft < 0 && whileShooting) whileShooting = false;//time's up
-
     }
-
-
-
-      
         
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("boss")) //If the player hits a defensive wall or an alien
         {
-            dead.Play();//play dead sound. It really never sounds, because the change takes an instant
+            dead.Play(); //play dead sound. It really never sounds, because the change takes an instant
             Destroy(other.gameObject);
             SceneManager.LoadScene(gameOverScene); //game over scene
             Destroy(this.gameObject,1.0f);
