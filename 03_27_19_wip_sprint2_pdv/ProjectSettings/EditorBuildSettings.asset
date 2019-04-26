@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End_13plus.unity
     guid: b7f18c954d0512e49bbb31bcb2ba7b1a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Victory_13plus.unity
     guid: 4d0e355f01e129f4d99ea92d45aa7aca
   - enabled: 1
