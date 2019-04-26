@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.044414505, g: 0.0418735, b: 0.045859963, a: 1}
+  m_IndirectSpecularColor: {r: 0.04345821, g: 0.041858047, b: 0.044895597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6136,11 +6136,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NAVE
       objectReference: {fileID: 0}
-    - target: {fileID: 2003877908134503480, guid: 4494f99529000e44baf6665937f49b00,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2003877908974636059, guid: 4494f99529000e44baf6665937f49b00,
         type: 3}
       propertyPath: rotationAngle
@@ -6211,6 +6206,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2003877908134503480, guid: 4494f99529000e44baf6665937f49b00,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2003877908974636060, guid: 4494f99529000e44baf6665937f49b00,
         type: 3}
       propertyPath: m_IsKinematic
@@ -6220,6 +6220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003877908601079100, guid: 4494f99529000e44baf6665937f49b00,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4494f99529000e44baf6665937f49b00, type: 3}
@@ -6239,22 +6244,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477,
-        type: 3}
-      propertyPath: alien
-      value: 
-      objectReference: {fileID: 2182940210089866690, guid: df733908d66196046901b50f2ce2e65b,
-        type: 3}
-    - target: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477,
-        type: 3}
-      propertyPath: newBossRespawnTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477,
-        type: 3}
-      propertyPath: newAlienRespawnTime
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4508689978140610759, guid: 4e3404dab1e503640a30105801908477,
         type: 3}
@@ -6325,6 +6314,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.6607
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477,
+        type: 3}
+      propertyPath: alien
+      value: 
+      objectReference: {fileID: 2182940210089866690, guid: df733908d66196046901b50f2ce2e65b,
+        type: 3}
+    - target: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477,
+        type: 3}
+      propertyPath: newBossRespawnTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508689978140610760, guid: 4e3404dab1e503640a30105801908477,
+        type: 3}
+      propertyPath: newAlienRespawnTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e3404dab1e503640a30105801908477, type: 3}
