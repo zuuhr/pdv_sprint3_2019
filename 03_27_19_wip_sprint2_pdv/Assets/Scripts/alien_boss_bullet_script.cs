@@ -3,15 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class alien_boss_bullet_script : MonoBehaviour
 {
-    private Rigidbody rb; 
-    private int speed = 5;
+    private Rigidbody rb; //Rigidbody of the gameobject
+    private int speed; 
     private int rebounds_number; //variable that handles the # of times the bullet has bounced
     public static bool change; //variable that handles the color change 
 
     private void Start()
     {
-        rb = this.GetComponent<Rigidbody>(); //acquires the rigidbody of the gameobject
-        rb.velocity = transform.forward * speed;
+        speed = 5; //constant speed
+        rb = this.GetComponent<Rigidbody>(); //acquires the rigidbody from the gameobject
+        rb.velocity = transform.forward * speed; //sets the velocity to move forward with constant speed;
     }
 
     private void OnTriggerExit(Collider collider)

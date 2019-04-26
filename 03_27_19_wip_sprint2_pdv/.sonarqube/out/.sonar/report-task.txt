@@ -1,0 +1,6 @@
+projectKey=pdv_sprint3_2019
+serverUrl=http://localhost:9000
+serverVersion=7.7.0.23042
+dashboardUrl=http://localhost:9000/dashboard?id=pdv_sprint3_2019
+ceTaskId=AWpUWomG6cp3aUJsbXxZ
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWpUWomG6cp3aUJsbXxZ
