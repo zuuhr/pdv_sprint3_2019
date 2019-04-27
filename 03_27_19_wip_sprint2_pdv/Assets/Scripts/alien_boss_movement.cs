@@ -18,39 +18,63 @@ public class alien_boss_movement : MonoBehaviour
 
     void Update()
     {
-        transform.GetChild(0).GetComponent<Transform>().Rotate(new Vector3(0, 0, 1), 1); //Rotation of the eyes of the boss
-
-        #region MOVEMENT
-        transform.LookAt(Player_movement_2DNew.thisPosition); //The boss will always be lookting towards the player
-        if (!nextPhase) //FIRST PHASE: In this phase the boss will move outwards the center black hole
+        if (Time.timeScale == 1)
         {
-            transform.Translate(movement * Time.deltaTime, Space.World); //movement
-            if (transform.position.x > xFinish) //change phase
+            transform.GetChild(0).GetComponent<Transform>().Rotate(new Vector3(0, 0, 1), 1); //Rotation of the eyes of the boss
+
+            #region MOVEMENT
+            transform.LookAt(Player_movement_2DNew.thisPosition); //The boss will always be lookting towards the player
+            if (!nextPhase) //FIRST PHASE: In this phase the boss will move outwards the center black hole
             {
-                nextPhase = true;
+                transform.Translate(movement * Time.deltaTime, Space.World); //movement
+                if (transform.position.x > xFinish) //change phase
+                {
+                    nextPhase = true;
+                }
             }
-        }
-        if (nextPhase) //LAST PHASE: The boss will orbitate around the black hole 
-        {
-            transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), angle);
-        }
-        
-        #endregion
+            if (nextPhase) //LAST PHASE: The boss will orbitate around the black hole 
+            {
+                transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), angle);
+            }
+
+            #endregion MOVEMENT
 
 
-        #region SHOOTING
-        if (shotNumber <= bulletLimit) //Only half the number on the inspector will be shot
+            #region SHOOTING
+            if (shotNumber <= bulletLimit) //Only half the number on the inspector will be shot
+            {
+                if (shotNumber % 2 == 0) shoot();
+                shotNumber++;
+            }
+            else if (shotNumber >= (bulletLimit + 1) && shotNumber <= (bulletLimit * 10)) //resets the bullet count
+            {
+                shotNumber++;
+                if (shotNumber == (bulletLimit * 10))
+                    shotNumber = 0;
+            }
+            #endregion SHOOTING
+
+        } else
         {
-            if(shotNumber%2==0) shoot(); 
-            shotNumber++;
+            transform.GetChild(0).GetComponent<Transform>().Rotate(new Vector3(0, 0, 0), 1); //Rotation of the eyes of the boss
+
+            #region MOVEMENT
+            transform.LookAt(Player_movement_2DNew.thisPosition); //The boss will always be lookting towards the player
+            if (!nextPhase) //FIRST PHASE: In this phase the boss will move outwards the center black hole
+            {
+                transform.Translate(movement * Time.deltaTime, Space.World); //movement
+                if (transform.position.x > xFinish) //change phase
+                {
+                    nextPhase = true;
+                }
+            }
+            if (nextPhase) //LAST PHASE: The boss will orbitate around the black hole 
+            {
+                transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 0, 0), angle);
+            }
+            #endregion MOVEMENT
         }
-        else if (shotNumber >= (bulletLimit+1) && shotNumber <= (bulletLimit*10)) //resets the bullet count
-        {
-            shotNumber++;
-            if (shotNumber == (bulletLimit*10))
-                shotNumber = 0;
-        }
-        #endregion SHOOTING
+
     }
 
     void shoot() //shooting method
