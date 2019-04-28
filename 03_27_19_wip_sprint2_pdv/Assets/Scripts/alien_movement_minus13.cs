@@ -1,30 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class alien_movement_minus13 : MonoBehaviour
 {
-    Vector3 movement;
-    public int speed;
-    public under13_variables scoreFunction;
+    private Vector3 movement; //Movement vector applied to the transform of the gameobject
+    public int speed; //Speed of the aliens that'll be set in the inspector
+    public under13_variables scoreFunction; //Object form a class we've creatied
 
     void Start()
     {
         movement = new Vector3(0, 0, -1) * speed; //movement
-        scoreFunction = GameObject.Find("GameObject").GetComponent<under13_variables>();
+        scoreFunction = GameObject.Find("GameObject").GetComponent<under13_variables>(); //instantiates the object from an existing one in the scene
     }
 
     void Update()
     {
-        if (Time.timeScale == 0)
-        {
-            speed = 0;
-        } else if (Time.timeScale == 1)
-        {
-            transform.Translate(movement * Time.deltaTime); //movement
-        }
+        //default movement & PAUSE menu management
+        if (Time.timeScale == 0) speed = 0;
+        else if (Time.timeScale == 1) transform.Translate(movement * Time.deltaTime); //movement
     }
+
     private void OnTriggerExit(Collider collider)
     {
         if (collider.tag == "main_area") //if alien is leaving the game area
@@ -43,8 +38,8 @@ public class alien_movement_minus13 : MonoBehaviour
         if (collider.tag == "Wall")
         {
             Destroy(collider.gameObject); //if an alien collides against a wall, they would destroy it
-            Destroy(gameObject);
-            scoreFunction.AddScore();
+            Destroy(gameObject); //And destroy themselves
+            scoreFunction.AddScore(); 
         }
     }
 }
