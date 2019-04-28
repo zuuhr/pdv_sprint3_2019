@@ -38,8 +38,7 @@ public class alien_boss_movement : MonoBehaviour
         }
         
         #endregion
-
-
+        
         #region SHOOTING
         if (shotNumber <= bulletLimit)
         {
@@ -54,15 +53,11 @@ public class alien_boss_movement : MonoBehaviour
                 shotNumber = 0;
         }
         #endregion SHOOTING
-        
     }
 
     void shoot()
     {
-
         gameObject.GetComponent<AudioSource>().Play();// Plays the boss shooting sound
         Instantiate(bullet, this.transform.position, this.transform.rotation);
     }
-    
- 
 }

@@ -55,7 +55,5 @@ public class alien_movementNew : MonoBehaviour
         }
         
     }
-
     
-
 }
